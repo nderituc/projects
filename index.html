@@ -83,10 +83,25 @@
         .skills-list li {
             margin-bottom: 0.5rem; /* Adds space between list items */
         }
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: none; /* Hidden by default */
+        }
+        #back-to-top:hover {
+            background-color: #155ab2;
+        }
     </style>
 </head>
 <body>
-    <header>
+    <header id="top">
         <div class="container">
             <h1>Catherine Nderitu</h1>
         </div>
@@ -123,12 +138,30 @@
             <a href="https://github.com/nderituc/Analyzing-Customer-Churn-in-Power-BI" target="_blank">Analyzing Customer Churn in Power BI</a>
             <a href="https://github.com/nderituc/Evaluating-A-Manufacturing-Process-in-SQL" target="_blank">Evaluating A Manufacturing Process in SQL</a>
             <!-- Add more project links as needed -->
+            <a href="#top" class="back-to-top">Back to Top</a>
         </div>
     </div>
 
     <footer>
         <p>&copy; 2024 Catherine Nderitu. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Show or hide the button depending on scroll position
+        window.onscroll = function() {
+            var button = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+
+        // Scroll to the top when the button is clicked
+        document.getElementById('back-to-top').onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
+    </script>
 </body>
 </html>
 
