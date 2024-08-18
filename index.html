@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -11,6 +11,7 @@
             padding: 0;
             background-color: #f4f4f4;
             color: #333;
+            line-height: 1.6;
         }
         header {
             background-color: #333;
@@ -19,26 +20,26 @@
             text-align: center;
         }
         .container {
-            width: 80%;
+            width: 90%;
             margin: auto;
-            overflow: hidden;
+            padding: 1rem;
         }
         .profile {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-between;
             margin: 2rem 0;
         }
         .profile img {
             border-radius: 50%;
-            margin-right: 1rem;
+            margin-bottom: 1rem;
+            max-width: 100%;
+            height: auto;
         }
-        .profile .bio-info {
-            flex: 1;
-            margin-right: 2rem;
-        }
-        .profile .contact-info {
-            flex: 1;
+        .profile .bio-info, .profile .contact-info {
+            width: 100%;
+            text-align: center;
+            margin-bottom: 1.5rem;
         }
         .profile h1 {
             margin: 0;
@@ -60,6 +61,7 @@
             color: #1a73e8;
             text-decoration: none;
             margin: 0.5rem 0;
+            word-wrap: break-word;
         }
         .projects a:hover {
             text-decoration: underline;
@@ -72,9 +74,7 @@
             color: #fff;
             text-align: center;
             padding: 1rem;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            margin-top: 2rem;
         }
         .skills-list {
             list-style-type: disc; /* Adds bullets */
@@ -98,6 +98,24 @@
         #back-to-top:hover {
             background-color: #155ab2;
         }
+
+        /* Responsive Design */
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .profile .bio-info, .profile .contact-info {
+                width: 45%;
+                text-align: left;
+            }
+            .profile img {
+                max-width: 150px;
+                height: 150px;
+                margin-right: 2rem;
+                margin-bottom: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -118,7 +136,7 @@
                 <h2>Contact Information</h2>
                 <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
                 <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
-                <p>Linkedin: <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank">LinkedIn Profile</a></p>
+                <p>LinkedIn: <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank">LinkedIn Profile</a></p>
             </div>
         </div>
 
@@ -139,7 +157,7 @@
             <a href="https://github.com/nderituc/Evaluating-A-Manufacturing-Process-in-SQL" target="_blank">Evaluating A Manufacturing Process in SQL</a>
             <a href="https://github.com/nderituc/chat-app" target="_blank">Chat/Data/Document querying app with Streamlit</a>
             <!-- Add more project links as needed -->
-            <a href="#top" class="back-to-top">Back to Top</a>
+            <a href="#top" id="back-to-top">Back to Top</a>
         </div>
     </div>
 
