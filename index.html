@@ -18,15 +18,19 @@
         header {
             background-color: #333;
             color: #fff;
-            height: 40px; /* Shorter header */
-            padding: 0.5rem;
+            padding: 1rem;
             text-align: center;
-            line-height: 1.6;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000; /* Ensure header stays on top of other content */
         }
         .container {
             width: 90%;
             margin: auto;
             padding: 1rem;
+            padding-top: 60px; /* Space for fixed header */
         }
         .profile {
             display: flex;
@@ -58,7 +62,7 @@
             background-color: #ffeb3b; /* Bright yellow */
         }
         .contact-box {
-            background-color: #333; /* Black background */
+            background-color: #4caf50; /* Bright green */
             color: #fff;
         }
         .box {
@@ -241,5 +245,4 @@
     </script>
 </body>
 </html>
-
 
