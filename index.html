@@ -15,10 +15,23 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
+        header {
+            background-color: #333;
+            height: 30px; /* Short height for the header */
+            color: #fff;
+            padding: 0.5rem;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
         .container {
             width: 90%;
             margin: auto;
             padding: 1rem;
+            margin-top: 40px; /* Space for the fixed header */
         }
         .profile {
             display: flex;
@@ -39,7 +52,6 @@
             margin-bottom: 1.5rem;
         }
         .bio-box, .contact-box, .box {
-            background: #fff;
             border-radius: 8px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 1rem;
@@ -47,11 +59,13 @@
             flex: 1;
         }
         .bio-box {
-            background-color: #ffeb3b; /* Bright yellow */
+            background-color: #ffeb3b; /* Initial bright yellow */
+            animation: colorChange 10s infinite alternate;
         }
         .contact-box {
-            background-color: #4caf50; /* Bright green */
+            background-color: #4caf50; /* Initial bright green */
             color: #fff;
+            animation: colorChange 10s infinite alternate;
         }
         .box {
             background-color: #fff;
@@ -125,9 +139,23 @@
         #back-to-top:hover {
             background-color: #155ab2;
         }
+
+        @keyframes colorChange {
+            0% { background-color: #ffeb3b; }
+            25% { background-color: #dcedc1; }
+            50% { background-color: #ffccbc; }
+            75% { background-color: #c5e1a5; }
+            100% { background-color: #ffeb3b; }
+        }
     </style>
 </head>
 <body>
+    <header>
+        <div class="container">
+            <p>Catherine Nderitu</p>
+        </div>
+    </header>
+
     <div class="container">
         <div class="profile">
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo">
@@ -214,3 +242,4 @@
     </script>
 </body>
 </html>
+
