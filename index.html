@@ -37,8 +37,10 @@
             max-width: 100%;
             height: auto;
         }
-        .bio-info, .contact-info {
-            width: 100%;
+        .bio-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
             margin-bottom: 1.5rem;
         }
         .bio-box, .contact-box, .box {
@@ -47,6 +49,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 1rem;
             margin-bottom: 1rem;
+            flex: 1;
         }
         .bio-box {
             background-color: #ffeb3b; /* Bright yellow */
@@ -132,9 +135,12 @@
                 margin-right: 2rem;
                 margin-bottom: 0;
             }
-            .bio-info, .contact-info {
-                width: 45%;
-                text-align: left;
+            .bio-info {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .bio-box, .contact-box {
+                width: 48%;
             }
         }
     </style>
@@ -234,7 +240,7 @@
     </footer>
 
     <script>
-        // Show back to top button when scrolled down
+        // Show or hide the button depending on scroll position
         window.addEventListener('scroll', function() {
             const backToTopButton = document.getElementById('back-to-top');
             if (window.scrollY > 300) {
@@ -243,10 +249,13 @@
                 backToTopButton.style.display = 'none';
             }
         });
+
+        // Scroll to the top when the button is clicked
+        document.getElementById('back-to-top').onclick = function() {
+            window.scrollTo({top: 0, behavior: 'smooth'});
+        };
     </script>
 </body>
 </html>
-
-
 
 
