@@ -64,12 +64,25 @@
         .projects {
             margin: 2rem 0;
         }
+        .project-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .project-card h3 {
+            margin-top: 0;
+            color: #1a73e8;
+        }
+        .project-card p {
+            margin: 0;
+        }
         .projects a {
             display: block;
             color: #1a73e8;
             text-decoration: none;
             margin: 0.5rem 0;
-            word-wrap: break-word;
         }
         .projects a:hover {
             text-decoration: underline;
@@ -157,29 +170,43 @@
         </div>
 
         <div class="projects">
-            <h2>Skills</h2>
-            <ul class="skills-list">
-                <li>Data analysis: Python, R, SQL, MS Excel, Spark</li>
-                <li>Statistical Analysis: Python, R, SPSS, Statistical techniques</li>
-                <li>Data Visualization: Power BI, Python (Matplotlib, Seaborn)</li>
-                <li>SQL: PostgreSQL</li>
-                <li>ETL Processing: Python, Spark, Excel, PowerBI</li>
-                <li>Machine Learning: Scikit-Learn, Machine Learning Algorithms, LLMs, Streamlit</li>
-            </ul>
             <h2>Projects</h2>
-            <a href="https://github.com/nderituc/Combating-Subscriber-Churn-with-Targeted-Marketing" target="_blank">Combating Subscriber Churn with Targeted Marketing</a>
-            <p>Leveraged machine learning models to reduce customer churn and optimize marketing strategies for a streaming platform.</p>
-            <a href="https://github.com/nderituc/Building-a-Demand-Forecating-Model" target="_blank">Building a Demand Forecating Model</a>
-            <p>Developed a demand forecasting model using PySpark to improve supply chain efficiency in an e-commerce setting.</p>
-            <a href="https://github.com/nderituc/Analyzing-Customer-Churn-in-Power-BI" target="_blank">Analyzing Customer Churn in Power BI</a>
-            <p>Analyzed telecom customer churn rates and created interactive dashboards to visualize key insights and trends.</p>
-            <a href="https://github.com/nderituc/Evaluating-A-Manufacturing-Process-in-SQL" target="_blank">Evaluating A Manufacturing Process in SQL</a>
-            <p>Used SQL queries to evaluate and optimize a manufacturing process by identifying inefficiencies and areas for improvement.</p>
-            <a href="https://github.com/nderituc/chat-app" target="_blank">Chat/Data/Document querying app with Streamlit</a>
-            <p>Built an AI-powered tool to answer questions, query documents, analyze data, and curate research papers using OpenAI GPT-4.</p>
-            <a href="https://github.com/nderituc/World-Cup-Database" target="_blank">World Cup Database</a>
-            <p>Created a comprehensive database of World Cup statistics and used SQL to analyze historical performance data.</p>
-            <!-- Add more project links as needed -->
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Combating-Subscriber-Churn-with-Targeted-Marketing" target="_blank">
+                    <h3>Combating Subscriber Churn with Targeted Marketing</h3>
+                </a>
+                <p>Leveraged machine learning models to reduce customer churn and optimize marketing strategies for a streaming platform.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Building-a-Demand-Forecating-Model" target="_blank">
+                    <h3>Building a Demand Forecating Model</h3>
+                </a>
+                <p>Developed a demand forecasting model using PySpark to improve supply chain efficiency in an e-commerce setting.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Analyzing-Customer-Churn-in-Power-BI" target="_blank">
+                    <h3>Analyzing Customer Churn in Power BI</h3>
+                </a>
+                <p>Analyzed telecom customer churn rates and created interactive dashboards to visualize key insights and trends.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Evaluating-A-Manufacturing-Process-in-SQL" target="_blank">
+                    <h3>Evaluating A Manufacturing Process in SQL</h3>
+                </a>
+                <p>Used SQL queries to evaluate and optimize a manufacturing process by identifying inefficiencies and areas for improvement.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/chat-app" target="_blank">
+                    <h3>Chat/Data/Document querying app with Streamlit</h3>
+                </a>
+                <p>Built an AI-powered tool to answer questions, query documents, analyze data, and curate research papers using OpenAI GPT-4.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/World-Cup-Database" target="_blank">
+                    <h3>World Cup Database</h3>
+                </a>
+                <p>Created a comprehensive database of World Cup statistics and used SQL to analyze historical performance data.</p>
+            </div>
             <a href="#top" id="back-to-top">Back to Top</a>
         </div>
     </div>
@@ -206,5 +233,6 @@
     </script>
 </body>
 </html>
+
 
 
