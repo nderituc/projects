@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -52,6 +52,20 @@
         }
         .contact-info p {
             margin: 0.5rem 0;
+        }
+        .social-links {
+            display: flex;
+            justify-content: center; /* Center the links horizontally */
+            gap: 15px; /* Space between the links */
+            margin-top: 1rem; /* Space above the social links */
+        }
+        .social-link {
+            text-decoration: none;
+            color: #1a73e8; /* Color for the links */
+            font-weight: bold; /* Make the text bold */
+        }
+        .social-link:hover {
+            text-decoration: underline; /* Underline on hover */
         }
         .projects {
             margin: 2rem 0;
@@ -136,8 +150,14 @@
                 <h2>Contact Information</h2>
                 <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
                 <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
-                <p>LinkedIn: <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank">LinkedIn Profile</a></p>
-                <p>Medium: <a href="https://medium.com/@nderituc" target="_blank">Medium Profile</a></p>
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
+                        LinkedIn
+                    </a>
+                    <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
+                        Medium
+                    </a>
+                </div>
             </div>
         </div>
 
