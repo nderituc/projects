@@ -37,9 +37,27 @@
             max-width: 100%;
             height: auto;
         }
-        .profile .bio-info, .profile .contact-info {
+        .bio-info, .contact-info {
             width: 100%;
             margin-bottom: 1.5rem;
+        }
+        .bio-box, .contact-box, .box {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .bio-box {
+            background-color: #ffeb3b; /* Bright yellow */
+        }
+        .contact-box {
+            background-color: #4caf50; /* Bright green */
+            color: #fff;
+        }
+        .box h2 {
+            margin-top: 0;
+            color: #1a73e8;
         }
         .bio {
             margin: 1rem 0;
@@ -60,17 +78,6 @@
         }
         .social-link:hover {
             color: #155ab2;
-        }
-        .box {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            margin-bottom: 1rem;
-        }
-        .box h2 {
-            margin-top: 0;
-            color: #1a73e8;
         }
         .skills-list {
             list-style-type: disc;
@@ -119,15 +126,15 @@
                 flex-direction: row;
                 align-items: flex-start;
             }
-            .profile .bio-info, .profile .contact-info {
-                width: 45%;
-                text-align: left;
-            }
             .profile img {
                 max-width: 150px;
                 height: 150px;
                 margin-right: 2rem;
                 margin-bottom: 0;
+            }
+            .bio-info, .contact-info {
+                width: 45%;
+                text-align: left;
             }
         }
     </style>
@@ -143,23 +150,25 @@
         <div class="profile">
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo" width="150" height="150">
             <div class="bio-info">
-                <div class="bio">
-                    <h1>Bio</h1>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
-                            <i class="fab fa-medium"></i>
-                        </a>
+                <div class="bio-box">
+                    <div class="bio">
+                        <h1>Bio</h1>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                            <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
+                                <i class="fab fa-medium"></i>
+                            </a>
+                        </div>
                     </div>
+                    <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
                 </div>
-                <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
-            </div>
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
-                <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
+                <div class="contact-box">
+                    <h2>Contact Information</h2>
+                    <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
+                    <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
+                </div>
             </div>
         </div>
 
@@ -225,20 +234,15 @@
     </footer>
 
     <script>
-        // Show or hide the button depending on scroll position
-        window.onscroll = function() {
-            var button = document.getElementById('back-to-top');
-            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-                button.style.display = 'block';
+        // Show back to top button when scrolled down
+        window.addEventListener('scroll', function() {
+            const backToTopButton = document.getElementById('back-to-top');
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
             } else {
-                button.style.display = 'none';
+                backToTopButton.style.display = 'none';
             }
-        };
-
-        // Scroll to the top when the button is clicked
-        document.getElementById('back-to-top').onclick = function() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
-        };
+        });
     </script>
 </body>
 </html>
