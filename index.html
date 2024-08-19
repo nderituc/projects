@@ -13,6 +13,7 @@
             background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         header {
             background-color: #333;
@@ -34,47 +35,68 @@
         .profile img {
             border-radius: 50%;
             margin-bottom: 1rem;
-            max-width: 150px;
+            max-width: 100%;
             height: auto;
         }
-        .bio-info, .contact-info, .skills, .projects {
-            width: 100%;
-            padding: 1rem;
+        .bio-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        .bio-box, .contact-box, .box {
+            background: #fff;
             border-radius: 8px;
-            margin: 1rem 0;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 1rem;
+            margin-bottom: 1rem;
+            flex: 1;
+        }
+        .bio-box {
+            background-color: #ffeb3b; /* Bright yellow */
             animation: colorChange 10s infinite alternate;
         }
-        .bio-info {
-            background-color: #ffeb3b; /* Default color */
+        .contact-box {
+            background-color: #4caf50; /* Bright green */
+            color: #fff;
+            animation: colorChange 10s infinite alternate;
         }
-        .contact-info {
-            background-color: #dcedc1; /* Default color */
+        .box {
+            background-color: #fff;
         }
-        .skills {
-            background-color: #ffccbc; /* Default color */
+        .box h2 {
+            margin-top: 0;
+            color: #1a73e8;
+        }
+        .bio {
+            margin: 1rem 0;
+            display: flex;
+            align-items: center;
+        }
+        .bio h1 {
+            margin: 0;
+            margin-right: 15px; /* Space between "Bio" and the first icon */
+        }
+        .social-links {
+            display: flex;
+            gap: 10px; /* Space between the LinkedIn and Medium icons */
+        }
+        .social-link {
+            color: #1a73e8;
+            font-size: 24px;
+        }
+        .social-link:hover {
+            color: #155ab2;
+        }
+        .skills-list {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .skills-list li {
+            margin-bottom: 0.5rem;
         }
         .projects {
-            background-color: #c5e1a5; /* Default color */
-        }
-        @keyframes colorChange {
-            0% {
-                background-color: #ffeb3b;
-            }
-            25% {
-                background-color: #dcedc1;
-            }
-            50% {
-                background-color: #ffccbc;
-            }
-            75% {
-                background-color: #c5e1a5;
-            }
-            100% {
-                background-color: #ffeb3b;
-            }
-        }
-        .bio, .contact-info h2, .projects h2, .skills h2 {
-            margin: 0;
+            margin: 2rem 0;
         }
         .projects a {
             display: block;
@@ -88,13 +110,6 @@
         }
         .projects a:visited {
             color: #6f42c1;
-        }
-        .skills-list {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .skills-list li {
-            margin-bottom: 0.5rem;
         }
         footer {
             background-color: #333;
@@ -118,15 +133,40 @@
         #back-to-top:hover {
             background-color: #155ab2;
         }
-        @media (min-width: 768px) {
-            .profile {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .profile img {
-                margin-right: 2rem;
-                margin-bottom: 0;
-            }
+
+        @keyframes colorChange {
+            0% { background-color: #ffeb3b; }
+            25% { background-color: #dcedc1; }
+            50% { background-color: #ffccbc; }
+            75% { background-color: #c5e1a5; }
+            100% { background-color: #ffeb3b; }
+        }
+
+        .wave {
+            position: relative;
+            width: 100%;
+            height: 100px;
+            overflow: hidden;
+        }
+        .wave svg {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            fill: #333;
+            animation: wave 10s linear infinite;
+        }
+        @keyframes wave {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-100%); }
+        }
+        .wave-top {
+            background: #f4f4f4;
+        }
+        .wave-bottom {
+            background: #fff;
+            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -137,21 +177,29 @@
         </div>
     </header>
 
+    <div class="wave wave-top">
+        <svg viewBox="0 0 1440 320">
+            <path d="M0,256L30,245.3C60,235,120,213,180,213.3C240,213,300,235,360,213.3C420,192,480,96,540,74.7C600,53,660,107,720,138.7C780,171,840,181,900,160C960,139,1020,85,1080,80C1140,75,1200,117,1260,138.7C1320,160,1380,160,1410,160L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+        </svg>
+    </div>
+
     <div class="container">
         <div class="profile">
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo">
             <div class="bio-info">
-                <h2>Bio</h2>
-                <p>Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
-            </div>
-            <div class="contact-info">
-                <h2>Contact Information</h2>
-                <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
-                <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
+                <div class="bio-box">
+                    <h2>Bio</h2>
+                    <p>Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
+                </div>
+                <div class="contact-box">
+                    <h2>Contact Information</h2>
+                    <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
+                    <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
+                </div>
             </div>
         </div>
 
-        <div class="skills">
+        <div class="box skills">
             <h2>Skills</h2>
             <ul class="skills-list">
                 <li>Data analysis: Python, R, SQL, MS Excel, Spark</li>
@@ -163,7 +211,7 @@
             </ul>
         </div>
 
-        <div class="projects">
+        <div class="box projects">
             <h2>Projects</h2>
             <div class="project-card">
                 <a href="https://github.com/nderituc/Combating-Subscriber-Churn-with-Targeted-Marketing" target="_blank">Combating Subscriber Churn with Targeted Marketing</a>
@@ -192,6 +240,12 @@
         </div>
 
         <a href="#top" id="back-to-top">Back to Top</a>
+    </div>
+
+    <div class="wave wave-bottom">
+        <svg viewBox="0 0 1440 320">
+            <path d="M0,128L30,128C60,128,120,128,180,138.7C240,149,300,171,360,186.7C420,203,480,213,540,208C600,203,660,181,720,160C780,139,840,117,900,117.3C960,117,1020,139,1080,160C1140,181,1200,203,1260,202.7C1320,203,1380,181,1410,170.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
+        </svg>
     </div>
 
     <footer>
