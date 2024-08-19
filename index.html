@@ -37,26 +37,44 @@
             max-width: 150px;
             height: auto;
         }
-        .bio-info, .contact-info {
+        .bio-info, .contact-info, .skills, .projects {
             width: 100%;
             padding: 1rem;
             border-radius: 8px;
             margin: 1rem 0;
+            animation: colorChange 10s infinite alternate;
         }
         .bio-info {
-            background-color: #ffeb3b;
+            background-color: #ffeb3b; /* Default color */
         }
         .contact-info {
-            background-color: #dcedc1;
+            background-color: #dcedc1; /* Default color */
         }
-        .bio, .contact-info h2 {
+        .skills {
+            background-color: #ffccbc; /* Default color */
+        }
+        .projects {
+            background-color: #c5e1a5; /* Default color */
+        }
+        @keyframes colorChange {
+            0% {
+                background-color: #ffeb3b;
+            }
+            25% {
+                background-color: #dcedc1;
+            }
+            50% {
+                background-color: #ffccbc;
+            }
+            75% {
+                background-color: #c5e1a5;
+            }
+            100% {
+                background-color: #ffeb3b;
+            }
+        }
+        .bio, .contact-info h2, .projects h2, .skills h2 {
             margin: 0;
-        }
-        .projects, .skills {
-            margin: 2rem 0;
-        }
-        .projects h2, .skills h2 {
-            margin-top: 0;
         }
         .projects a {
             display: block;
@@ -172,6 +190,7 @@
                 <p>Created a comprehensive database of World Cup statistics and used SQL to analyze historical performance data.</p>
             </div>
         </div>
+
         <a href="#top" id="back-to-top">Back to Top</a>
     </div>
 
