@@ -5,144 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catherine Nderitu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
+        /* Add your existing styles here */
+
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
         body {
+            background: linear-gradient(45deg, #ff6f61, #dcedc1, #ffeb3b);
+            background-size: 600% 600%;
+            animation: gradientAnimation 15s ease infinite;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 1rem;
-            text-align: center;
-        }
-        .container {
-            width: 90%;
-            margin: auto;
-            padding: 1rem;
-        }
-        .profile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            margin: 2rem 0;
-        }
-        .profile img {
-            border-radius: 50%;
-            margin-bottom: 1rem;
-            max-width: 100%;
-            height: auto;
-        }
-        .bio-info {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 2rem;
-            margin-bottom: 1.5rem;
-        }
-        .bio-box, .contact-box, .box {
-            background: #fff;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 1rem;
-            margin-bottom: 1rem;
-            flex: 1;
-        }
-        .bio-box {
-            background-color: #ffeb3b; /* Bright yellow */
-        }
-        .contact-box {
-            background-color: #4caf50; /* Bright green */
-            color: #fff;
-        }
-        .box h2 {
-            margin-top: 0;
-            color: #1a73e8;
-        }
-        .bio {
-            margin: 1rem 0;
-            display: flex;
-            align-items: center;
-        }
-        .bio h1 {
-            margin: 0;
-            margin-right: 15px; /* Space between "Bio" and the first icon */
-        }
-        .social-links {
-            display: flex;
-            gap: 10px; /* Space between the LinkedIn and Medium icons */
-        }
-        .social-link {
-            color: #1a73e8;
-            font-size: 24px;
-        }
-        .social-link:hover {
-            color: #155ab2;
-        }
-        .skills-list {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        .skills-list li {
-            margin-bottom: 0.5rem;
-        }
-        .projects a {
-            display: block;
-            color: #1a73e8;
-            text-decoration: none;
-            margin: 0.5rem 0;
-        }
-        .projects a:hover {
-            text-decoration: underline;
-        }
-        .projects a:visited {
-            color: #6f42c1;
-        }
-        footer {
-            background-color: #333;
-            color: #fff;
-            text-align: center;
-            padding: 1rem;
-            margin-top: 2rem;
-        }
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background-color: #1a73e8;
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            padding: 0.5rem 1rem;
-            cursor: pointer;
-            display: none;
-        }
-        #back-to-top:hover {
-            background-color: #155ab2;
+
+        .parallax {
+            background-image: url('your-image.jpg');
+            min-height: 500px;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
-        @media (min-width: 768px) {
-            .profile {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .profile img {
-                max-width: 150px;
-                height: 150px;
-                margin-right: 2rem;
-                margin-bottom: 0;
-            }
-            .bio-info {
-                flex-direction: row;
-                justify-content: space-between;
-            }
-            .bio-box, .contact-box {
-                width: 48%;
-            }
+        .project-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
+        .project-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Existing styles for bio, contact info, projects, etc. */
     </style>
 </head>
 <body>
@@ -152,33 +53,33 @@
         </div>
     </header>
 
+    <div class="parallax"></div>
+
     <div class="container">
-        <div class="profile">
+        <div class="profile" data-aos="fade-up">
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo" width="150" height="150">
-            <div class="bio-info">
-                <div class="bio-box">
-                    <div class="bio">
-                        <h1>Bio</h1>
-                        <div class="social-links">
-                            <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
-                                <i class="fab fa-linkedin"></i>
-                            </a>
-                            <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
-                                <i class="fab fa-medium"></i>
-                            </a>
-                        </div>
+            <div class="bio-info" style="background-color: #ffeb3b; padding: 1rem;">
+                <div class="bio">
+                    <h1>Bio</h1>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
+                            <i class="fab fa-medium"></i>
+                        </a>
                     </div>
-                    <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
                 </div>
-                <div class="contact-box">
-                    <h2>Contact Information</h2>
-                    <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
-                    <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
-                </div>
+                <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
+            </div>
+            <div class="contact-info" style="background-color: #dcedc1; padding: 1rem;">
+                <h2>Contact Information</h2>
+                <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
+                <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
             </div>
         </div>
 
-        <div class="box">
+        <div class="projects" data-aos="fade-up">
             <h2>Skills</h2>
             <ul class="skills-list">
                 <li>Data analysis: Python, R, SQL, MS Excel, Spark</li>
@@ -188,48 +89,13 @@
                 <li>ETL Processing: Python, Spark, Excel, PowerBI</li>
                 <li>Machine Learning: Scikit-Learn, Machine Learning Algorithms, LLMs, Streamlit</li>
             </ul>
-        </div>
-
-        <div class="box">
             <h2>Projects</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <a href="https://github.com/nderituc/Combating-Subscriber-Churn-with-Targeted-Marketing" target="_blank">
-                        <h3>Combating Subscriber Churn with Targeted Marketing</h3>
-                    </a>
-                    <p>Leveraged machine learning models to reduce customer churn and optimize marketing strategies for a streaming platform.</p>
-                </div>
-                <div class="project-card">
-                    <a href="https://github.com/nderituc/Building-a-Demand-Forecating-Model" target="_blank">
-                        <h3>Building a Demand Forecating Model</h3>
-                    </a>
-                    <p>Developed a demand forecasting model using PySpark to improve supply chain efficiency in an e-commerce setting.</p>
-                </div>
-                <div class="project-card">
-                    <a href="https://github.com/nderituc/Analyzing-Customer-Churn-in-Power-BI" target="_blank">
-                        <h3>Analyzing Customer Churn in Power BI</h3>
-                    </a>
-                    <p>Analyzed telecom customer churn rates and created interactive dashboards to visualize key insights and trends.</p>
-                </div>
-                <div class="project-card">
-                    <a href="https://github.com/nderituc/Evaluating-A-Manufacturing-Process-in-SQL" target="_blank">
-                        <h3>Evaluating A Manufacturing Process in SQL</h3>
-                    </a>
-                    <p>Used SQL queries to evaluate and optimize a manufacturing process by identifying inefficiencies and areas for improvement.</p>
-                </div>
-                <div class="project-card">
-                    <a href="https://github.com/nderituc/chat-app" target="_blank">
-                        <h3>Chat/Data/Document querying app with Streamlit</h3>
-                    </a>
-                    <p>Built an AI-powered tool to answer questions, query documents, analyze data, and curate research papers using OpenAI GPT-4.</p>
-                </div>
-                <div class="project-card">
-                    <a href="https://github.com/nderituc/World-Cup-Database" target="_blank">
-                        <h3>World Cup Database</h3>
-                    </a>
-                    <p>Created a comprehensive database of World Cup statistics and used SQL to analyze historical performance data.</p>
-                </div>
+            <!-- Add project cards with links -->
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Combating-Subscriber-Churn-with-Targeted-Marketing" target="_blank">Combating Subscriber Churn with Targeted Marketing</a>
+                <p>Leveraged machine learning models to reduce customer churn and optimize marketing strategies for a streaming platform.</p>
             </div>
+            <!-- Repeat for other projects -->
         </div>
 
         <a href="#top" id="back-to-top">Back to Top</a>
@@ -239,23 +105,28 @@
         <p>&copy; 2024 Catherine Nderitu. All rights reserved.</p>
     </footer>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        // Show or hide the button depending on scroll position
-        window.addEventListener('scroll', function() {
-            const backToTopButton = document.getElementById('back-to-top');
-            if (window.scrollY > 300) {
-                backToTopButton.style.display = 'block';
-            } else {
-                backToTopButton.style.display = 'none';
+        AOS.init();
+        particlesJS('particles-js', {
+            "particles": {
+                // Your particles.js configuration
             }
         });
 
-        // Scroll to the top when the button is clicked
+        window.onscroll = function() {
+            var button = document.getElementById('back-to-top');
+            if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                button.style.display = 'block';
+            } else {
+                button.style.display = 'none';
+            }
+        };
+
         document.getElementById('back-to-top').onclick = function() {
             window.scrollTo({top: 0, behavior: 'smooth'});
         };
     </script>
 </body>
 </html>
-
-
