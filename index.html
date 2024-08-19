@@ -5,45 +5,111 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Catherine Nderitu</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
     <style>
-        /* Add your existing styles here */
-
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {
-            background: linear-gradient(45deg, #ff6f61, #dcedc1, #ffeb3b);
-            background-size: 600% 600%;
-            animation: gradientAnimation 15s ease infinite;
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f4f4f4;
             color: #333;
             line-height: 1.6;
         }
-
-        .parallax {
-            background-image: url('your-image.jpg');
-            min-height: 500px;
-            background-attachment: fixed;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-size: cover;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
         }
-
-        .project-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .container {
+            width: 90%;
+            margin: auto;
+            padding: 1rem;
         }
-        .project-card:hover {
-            transform: scale(1.05);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        .profile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 2rem 0;
         }
-
-        /* Existing styles for bio, contact info, projects, etc. */
+        .profile img {
+            border-radius: 50%;
+            margin-bottom: 1rem;
+            max-width: 150px;
+            height: auto;
+        }
+        .bio-info, .contact-info {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        .bio-info {
+            background-color: #ffeb3b;
+        }
+        .contact-info {
+            background-color: #dcedc1;
+        }
+        .bio, .contact-info h2 {
+            margin: 0;
+        }
+        .projects, .skills {
+            margin: 2rem 0;
+        }
+        .projects h2, .skills h2 {
+            margin-top: 0;
+        }
+        .projects a {
+            display: block;
+            color: #1a73e8;
+            text-decoration: none;
+            margin: 0.5rem 0;
+            word-wrap: break-word;
+        }
+        .projects a:hover {
+            text-decoration: underline;
+        }
+        .projects a:visited {
+            color: #6f42c1;
+        }
+        .skills-list {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        .skills-list li {
+            margin-bottom: 0.5rem;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: #1a73e8;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            display: none;
+        }
+        #back-to-top:hover {
+            background-color: #155ab2;
+        }
+        @media (min-width: 768px) {
+            .profile {
+                flex-direction: row;
+                align-items: flex-start;
+            }
+            .profile img {
+                margin-right: 2rem;
+                margin-bottom: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -53,33 +119,21 @@
         </div>
     </header>
 
-    <div class="parallax"></div>
-
     <div class="container">
-        <div class="profile" data-aos="fade-up">
-            <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo" width="150" height="150">
-            <div class="bio-info" style="background-color: #ffeb3b; padding: 1rem;">
-                <div class="bio">
-                    <h1>Bio</h1>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
-                            <i class="fab fa-linkedin"></i>
-                        </a>
-                        <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
-                            <i class="fab fa-medium"></i>
-                        </a>
-                    </div>
-                </div>
-                <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
+        <div class="profile">
+            <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo">
+            <div class="bio-info">
+                <h2>Bio</h2>
+                <p>Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
             </div>
-            <div class="contact-info" style="background-color: #dcedc1; padding: 1rem;">
+            <div class="contact-info">
                 <h2>Contact Information</h2>
                 <p>Email: <a href="mailto:catherine.nderitu.usa@gmail.com">catherine.nderitu.usa@gmail.com</a></p>
                 <p>Phone: <a href="tel:6163156694">616 315 6694</a></p>
             </div>
         </div>
 
-        <div class="projects" data-aos="fade-up">
+        <div class="skills">
             <h2>Skills</h2>
             <ul class="skills-list">
                 <li>Data analysis: Python, R, SQL, MS Excel, Spark</li>
@@ -89,15 +143,35 @@
                 <li>ETL Processing: Python, Spark, Excel, PowerBI</li>
                 <li>Machine Learning: Scikit-Learn, Machine Learning Algorithms, LLMs, Streamlit</li>
             </ul>
+        </div>
+
+        <div class="projects">
             <h2>Projects</h2>
-            <!-- Add project cards with links -->
             <div class="project-card">
                 <a href="https://github.com/nderituc/Combating-Subscriber-Churn-with-Targeted-Marketing" target="_blank">Combating Subscriber Churn with Targeted Marketing</a>
                 <p>Leveraged machine learning models to reduce customer churn and optimize marketing strategies for a streaming platform.</p>
             </div>
-            <!-- Repeat for other projects -->
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Building-a-Demand-Forecating-Model" target="_blank">Building a Demand Forecasting Model</a>
+                <p>Developed a demand forecasting model using PySpark to improve supply chain efficiency in an e-commerce setting.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Analyzing-Customer-Churn-in-Power-BI" target="_blank">Analyzing Customer Churn in Power BI</a>
+                <p>Analyzed telecom customer churn rates and created interactive dashboards to visualize key insights and trends.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/Evaluating-A-Manufacturing-Process-in-SQL" target="_blank">Evaluating A Manufacturing Process in SQL</a>
+                <p>Used SQL queries to evaluate and optimize a manufacturing process by identifying inefficiencies and areas for improvement.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/chat-app" target="_blank">Chat/Data/Document Querying App with Streamlit</a>
+                <p>Built an AI-powered tool to answer questions, query documents, analyze data, and curate research papers using OpenAI GPT-4.</p>
+            </div>
+            <div class="project-card">
+                <a href="https://github.com/nderituc/World-Cup-Database" target="_blank">World Cup Database</a>
+                <p>Created a comprehensive database of World Cup statistics and used SQL to analyze historical performance data.</p>
+            </div>
         </div>
-
         <a href="#top" id="back-to-top">Back to Top</a>
     </div>
 
@@ -105,16 +179,8 @@
         <p>&copy; 2024 Catherine Nderitu. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script>
-        AOS.init();
-        particlesJS('particles-js', {
-            "particles": {
-                // Your particles.js configuration
-            }
-        });
-
+        // Show or hide the button depending on scroll position
         window.onscroll = function() {
             var button = document.getElementById('back-to-top');
             if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
@@ -124,6 +190,7 @@
             }
         };
 
+        // Scroll to the top when the button is clicked
         document.getElementById('back-to-top').onclick = function() {
             window.scrollTo({top: 0, behavior: 'smooth'});
         };
