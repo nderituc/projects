@@ -54,12 +54,10 @@
         }
         .bio-box {
             background-color: #ffeb3b; /* Bright yellow */
-            animation: colorChange 10s infinite alternate;
         }
         .contact-box {
             background-color: #4caf50; /* Bright green */
             color: #fff;
-            animation: colorChange 10s infinite alternate;
         }
         .box {
             background-color: #fff;
@@ -133,15 +131,6 @@
         #back-to-top:hover {
             background-color: #155ab2;
         }
-
-        @keyframes colorChange {
-            0% { background-color: #ffeb3b; }
-            25% { background-color: #dcedc1; }
-            50% { background-color: #ffccbc; }
-            75% { background-color: #c5e1a5; }
-            100% { background-color: #ffeb3b; }
-        }
-
         .wave {
             position: relative;
             width: 100%;
@@ -155,18 +144,6 @@
             width: 100%;
             height: 100%;
             fill: #333;
-            animation: wave 10s linear infinite;
-        }
-        @keyframes wave {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-100%); }
-        }
-        .wave-top {
-            background: #f4f4f4;
-        }
-        .wave-bottom {
-            background: #fff;
-            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -177,12 +154,6 @@
         </div>
     </header>
 
-    <div class="wave wave-top">
-        <svg viewBox="0 0 1440 320">
-            <path d="M0,256L30,245.3C60,235,120,213,180,213.3C240,213,300,235,360,213.3C420,192,480,96,540,74.7C600,53,660,107,720,138.7C780,171,840,181,900,160C960,139,1020,85,1080,80C1140,75,1200,117,1260,138.7C1320,160,1380,160,1410,160L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-        </svg>
-    </div>
-
     <div class="container">
         <div class="profile">
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo">
@@ -190,6 +161,10 @@
                 <div class="bio-box">
                     <h2>Bio</h2>
                     <p>Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/your-profile" target="_blank" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://medium.com/@yourprofile" target="_blank" class="social-link"><i class="fab fa-medium"></i></a>
+                    </div>
                 </div>
                 <div class="contact-box">
                     <h2>Contact Information</h2>
@@ -242,12 +217,6 @@
         <a href="#top" id="back-to-top">Back to Top</a>
     </div>
 
-    <div class="wave wave-bottom">
-        <svg viewBox="0 0 1440 320">
-            <path d="M0,128L30,128C60,128,120,128,180,138.7C240,149,300,171,360,186.7C420,203,480,213,540,208C600,203,660,181,720,160C780,139,840,117,900,117.3C960,117,1020,139,1080,160C1140,181,1200,203,1260,202.7C1320,203,1380,181,1410,170.7L1440,160L1440,320L1410,320C1380,320,1320,320,1260,320C1200,320,1140,320,1080,320C1020,320,960,320,900,320C840,320,780,320,720,320C660,320,600,320,540,320C480,320,420,320,360,320C300,320,240,320,180,320C120,320,60,320,30,320L0,320Z"></path>
-        </svg>
-    </div>
-
     <footer>
         <p>&copy; 2024 Catherine Nderitu. All rights reserved.</p>
     </footer>
@@ -270,3 +239,4 @@
     </script>
 </body>
 </html>
+
