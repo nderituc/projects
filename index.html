@@ -76,11 +76,15 @@
         .bio {
             margin: 1rem 0;
             display: flex;
+            flex-direction: column;
             align-items: center;
         }
         .bio h1 {
             margin: 0;
-            margin-right: 15px; /* Space between "Bio" and the first icon */
+        }
+        .bio-name {
+            font-size: 2rem;
+            margin-bottom: 1rem;
         }
         .social-links {
             display: flex;
@@ -157,9 +161,7 @@
 </head>
 <body>
     <header id="top">
-        <div class="container">
-            <h1>Catherine Nderitu</h1>
-        </div>
+        <!-- Removed the name from the header -->
     </header>
 
     <div class="container">
@@ -167,6 +169,7 @@
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo">
             <div class="bio-info">
                 <div class="bio-box">
+                    <div class="bio-name">Catherine Nderitu</div> <!-- Added name here -->
                     <h2>Bio</h2>
                     <p>Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
                     <div class="social-links">
