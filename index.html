@@ -47,19 +47,21 @@
         }
         .bio {
             margin: 1rem 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .social-links {
             display: flex;
-            justify-content: center; /* Center the links horizontally */
-            gap: 15px; /* Space between the links */
-            margin-top: 0.5rem; /* Space above the social links */
+            gap: 15px;
+            margin-left: 10px; /* Space between Bio and the icons */
         }
         .social-link {
-            color: #1a73e8; /* Color for the links */
-            font-size: 24px; /* Size of the icons */
+            color: #1a73e8;
+            font-size: 24px;
         }
         .social-link:hover {
-            color: #155ab2; /* Color on hover */
+            color: #155ab2;
         }
         .projects {
             margin: 2rem 0;
@@ -75,7 +77,7 @@
             text-decoration: underline;
         }
         .projects a:visited {
-            color: #6f42c1; /* Color for visited links */
+            color: #6f42c1;
         }
         footer {
             background-color: #333;
@@ -85,11 +87,11 @@
             margin-top: 2rem;
         }
         .skills-list {
-            list-style-type: disc; /* Adds bullets */
-            margin-left: 20px; /* Adjusts the indentation */
+            list-style-type: disc;
+            margin-left: 20px;
         }
         .skills-list li {
-            margin-bottom: 0.5rem; /* Adds space between list items */
+            margin-bottom: 0.5rem;
         }
         #back-to-top {
             position: fixed;
@@ -101,13 +103,12 @@
             border-radius: 5px;
             padding: 0.5rem 1rem;
             cursor: pointer;
-            display: none; /* Hidden by default */
+            display: none;
         }
         #back-to-top:hover {
             background-color: #155ab2;
         }
 
-        /* Responsive Design */
         @media (min-width: 768px) {
             .profile {
                 flex-direction: row;
@@ -137,16 +138,18 @@
         <div class="profile">
             <img src="https://raw.githubusercontent.com/nderituc/photo/main/OIP%20(1).jpeg" alt="photo" width="150" height="150">
             <div class="bio-info">
-                <h1>Bio</h1>
-                <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
-                        <i class="fab fa-linkedin"></i>
-                    </a>
-                    <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
-                        <i class="fab fa-medium"></i>
-                    </a>
+                <div class="bio">
+                    <h1>Bio</h1>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/catherine-nderitu-b98166252/" target="_blank" class="social-link">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://medium.com/@nderituc" target="_blank" class="social-link">
+                            <i class="fab fa-medium"></i>
+                        </a>
+                    </div>
                 </div>
+                <p class="bio">Data Analyst/Scientist with a passion in Machine Learning and Data Science. My background is M.S. Data Science and Analytics and B.S. Statistics.</p>
             </div>
             <div class="contact-info">
                 <h2>Contact Information</h2>
